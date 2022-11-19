@@ -52,6 +52,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URL;
+import java.nio.file.Files;
 import java.time.Instant;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
@@ -193,7 +194,7 @@ class MavenArchiverTest
     void testMultiClassPath()
         throws Exception
     {
-        final File tempFile = File.createTempFile( "maven-archiver-test-", ".jar" );
+        final File tempFile = Files.createTempFile( "maven-archiver-test-", ".jar" ).toFile();
 
         try
         {
